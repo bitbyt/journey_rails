@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'static_pages/home'
+  get 'users', to: 'users#index'
+  get 'user/(:id)', to: 'users#show'
 
   devise_for :caregivers
   devise_for :admins
