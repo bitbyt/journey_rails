@@ -41,7 +41,14 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (7.1.1)
+    autoprefixer-rails (6.4.0)
+      execjs
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
+    bootstrap-will_paginate (0.0.10)
+      will_paginate
     builder (3.2.2)
     byebug (9.0.0)
     carrierwave (0.11.2)
@@ -240,8 +247,6 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
-    materialize-sass (0.97.7)
-      sass (~> 3.3)
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -364,6 +369,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (= 3.1.11)
+  bootstrap-sass
+  bootstrap-will_paginate (= 0.0.10)
   byebug (= 9.0.0)
   carrierwave (= 0.11.2)
   coffee-rails (= 4.2.1)
@@ -377,7 +384,6 @@ DEPENDENCIES
   jquery-rails (= 4.1.1)
   jquery-turbolinks
   listen (= 3.0.8)
-  materialize-sass
   mini_magick (= 4.5.1)
   minitest-reporters (= 1.1.9)
   parsley-rails

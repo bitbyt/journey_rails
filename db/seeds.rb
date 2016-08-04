@@ -7,17 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-
-
-User.create!(name:  "Admin User",
-             email: "adminuser@thejourney.you",
+User.create!(name:  "Stacey Tay",
+             email: "stacey@thejourney.you",
              password:              "password",
              password_confirmation: "password")
 
-User.create!(name:  "Prima ry User",
-            email: "prima@thejourney.you",
+User.create!(name:  "Dr Ellen Enders",
+            email: "ellen.enders@thejourney.you",
             password:              "password",
             password_confirmation: "password")
+
+User.create!(name:  "Shirley Tay",
+             email: "mom@thejourney.you",
+             password:              "password",
+             password_confirmation: "password")
 
 99.times do |n|
   name  = Faker::Name.name
