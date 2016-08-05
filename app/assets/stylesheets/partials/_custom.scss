@@ -111,6 +111,8 @@ body {
 
   i {
     font-size: 6rem;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
   }
 
   h1, h3 {
