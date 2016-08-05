@@ -1,0 +1,17 @@
+<%= form_for(@post) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <select name="post[mood]" class="form-control form-select">
+      <option value='' selected="selected">How are you feeling today?</option>
+      <option value='happy'>Happy</option>
+      <option value='neutral'>Neutral</option>
+      <option value='anxious'>Anxious</option>
+      <option value='sad'>Sad</option>
+      <option value='lethargic'>Lethargic</option>
+    </select>
+  </div>
+  <%= f.text_area :content, placeholder: "Your thoughts here.", rows: "7", class: "form-control form-textarea" %>
+  <div class="form-btn-ctrl">
+    <%= f.submit "Post", class: "btn btn-post btn-lg btn-primary" %>
+  </div>
+<% end %>

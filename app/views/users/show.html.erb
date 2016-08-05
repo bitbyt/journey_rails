@@ -1,0 +1,46 @@
+<% provide(:title, @user.name) %>
+  <div class="row row-centered">
+    <div class="col-md-6 col-sm-8 col-centered">
+      <% if @user == current_user && current_user.support? %>
+      <div class="postcard hero">
+      <h2>Hi, <%= @user.name %></h2>
+      <h5>Supporting <%= @user.following.count %> journeys</h5>
+      <% if @user.following.count == 0 %>
+        <div class="self-padding">
+          <h3>You're not supporting anyone now, find someone to help.</h3>
+        </div>
+        <%= link_to "Support Someone", authenticated_root_path, class: "btn btn-post btn-lg btn-primary"  %>
+      <% end %>
+      </div>
+      <div class="posts">
+        <%= render 'shared/feed' %>
+      </div>
+
+      <% elsif @user == current_user %>
+        <div class="postcard hero">
+        <h2>Hi, <%= @user.name %></h2>
+        <h5><%= @user.posts.count %> Posts</h5>
+        <%= render 'shared/post_form' %>
+        </div>
+        <section class="post_list">
+        <% if @user.posts.any? %>
+          <div class="posts">
+            <%= render @posts %>
+          </div>
+          <%= will_paginate @posts %>
+        <% end %>
+        </section>
+
+      <% else %>
+        <section class="post_list">
+        <% if @user.posts.any? %>
+          <%= render 'follow_form' if user_signed_in? %>
+          <div class="posts">
+            <%= render @posts %>
+          </div>
+          <%= will_paginate @posts %>
+        <% end %>
+        </section>
+      <% end %>
+    </div>
+  </div>

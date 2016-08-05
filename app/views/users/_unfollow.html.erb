@@ -1,0 +1,6 @@
+<%= form_for(current_user.active_relationships.find_by(followed_id: @user.id),
+             html: { method: :delete }) do |f| %>
+  <div class="form-btn-ctrl">
+    <%= f.submit "Unsupport", class: "btn btn-block btn-lg" %>
+  </div>
+<% end %>

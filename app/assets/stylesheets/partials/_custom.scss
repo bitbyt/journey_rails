@@ -1,0 +1,265 @@
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body {
+  animation: bgcolorchange 50s infinite;
+  -webkit-animation: bgcolorchange 50s infinite;
+}
+
+.btn {
+  font-size: 1.7rem;
+  padding: 1.2rem 3rem;
+  border: none;
+  border-radius: 3rem;
+}
+
+.form-btn-ctrl {
+  .btn {
+    font-size: 1.7rem;
+    padding: 1.2rem 3rem;
+    border: none;
+    border-radius: 3rem;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    .btn {
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+      border-radius: 0;
+      padding: 1.5rem 3rem;
+    }
+  }
+}
+
+.navbar-brand {
+  font-size: $font-size-h4;
+
+  i {
+    font-size: $font-size-h3;
+  }
+}
+
+.navbar-collapse {
+  border: none;
+}
+
+.navbar-default {
+  animation: bgcolorchange 50s infinite;
+  -webkit-animation: bgcolorchange 50s infinite;
+  border-bottom: none;
+  text-align: center;
+
+  .navbar-toggle {
+    background: none;
+    border: none;
+
+    &:hover {
+      background: none;
+      border: none;
+    }
+  }
+}
+
+.container-fluid {
+  .limit {
+    max-width: 960px;
+  }
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin: 0 auto;
+
+    @media screen and (max-width: $screen-xs-max) {
+      padding: 0;
+    }
+}
+
+.hero {
+  margin-bottom: -80px;
+  padding-top: 10rem;
+
+  h1, h2 {
+    font-family: $special-font-family;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+  }
+
+  @media screen and (max-width: $screen-xs-max) {
+    padding-top: 7rem;
+    .field {
+      padding: 0 15px;
+    }
+  }
+}
+
+.front {
+  padding-top: 2rem;
+
+  i {
+    font-size: 6rem;
+  }
+
+  h1, h3 {
+    margin-top: 0;
+  }
+}
+
+.posts {
+  list-style: none;
+
+  .happy {
+    background-color: $color1;
+    color: darken($color1, 30%);
+  }
+
+  .neutral {
+    background-color: $color2;
+    color: darken($color2, 30%);
+  }
+
+  .anxious {
+    background-color: $color3;
+    color: darken($color3, 30%);
+  }
+
+  .sad {
+    background-color: $color4;
+    color: darken($color4, 30%);
+  }
+
+  .lethargic {
+    background-color: $color5;
+    color: darken($color5, 30%);
+  }
+
+}
+
+.postcard {
+  height: 100vh;
+  text-align: center;
+  list-style: none;
+  font-size: 2rem;
+  position: relative;
+  margin-top: 0;
+
+  .content {
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    @include vertical-align();
+
+    .h-lg {
+      font-size: ($font-size-h1 * 2);
+    }
+  }
+
+  .form-control {
+    background: none;
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+  }
+
+  .form-select {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    border: 1px solid $brand-primary;
+    padding: 1rem;
+    height: 5rem;
+    border-radius: 5rem;
+    box-sizing: border-box;
+    animation: colorchange 50s infinite;
+    -webkit-animation: colorchange 50s infinite;
+  }
+
+  .form-textarea {
+    font-size: 2.5rem;
+  }
+
+  .form-btn-ctrl {
+
+    .btn {
+      font-size: 1.7rem;
+      padding: 1.2rem 3rem;
+      border: none;
+      border-radius: 3rem;
+    }
+
+    @media screen and (max-width: $screen-xs-max) {
+      .btn {
+        position: absolute;
+        bottom: 0;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+        border-radius: 0;
+        padding: 1.5rem 3rem;
+      }
+
+      .btn-post {
+        bottom: 70px;
+        z-index: 1000;
+      }
+    }
+  }
+}
+
+.self-padding {
+  padding: 3rem;
+}
+
+@keyframes bgcolorchange
+   {
+     0%   {background: $bg1;}
+     25%  {background: $bg2;}
+     50%  {background: $bg3;}
+     75%  {background: $bg4;}
+     100% {background: $bg1;}
+   }
+
+@-webkit-keyframes bgcolorchange /* Safari and Chrome - necessary duplicate */
+   {
+     0%   {background: $bg1;}
+     25%  {background: $bg2;}
+     50%  {background: $bg3;}
+     75%  {background: $bg4;}
+     100% {background: $bg1;}
+   }
+
+@keyframes colorchange
+  {
+    0%   {color: invert($bg1);}
+    25%  {color: invert($bg2);}
+    50%  {color: invert($bg3);}
+    75%  {color: invert($bg4);}
+    100% {color: invert($bg1);}
+  }
+
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+  {
+    0%   {color: invert($bg1);}
+    25%  {color: invert($bg2);}
+    50%  {color: invert($bg3);}
+    75%  {color: invert($bg4);}
+    100% {color: invert($bg1);}
+  }
+
+  footer {
+    text-align: center;
+  }

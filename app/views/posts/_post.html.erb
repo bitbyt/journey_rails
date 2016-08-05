@@ -1,0 +1,16 @@
+<div id="post-<%= post.id %>" class="postcard <%= post.mood %>">
+  <div class="content">
+    <h1 class="h-lg"><i class="icon-<%= post.mood %>"></i></h1>
+    <p class="user"><%= link_to post.user.name, post.user %> was <%= post.mood %>.</p>
+    <h3><%= post.content %></h3>
+    <p class="timestamp">
+      Posted <%= time_ago_in_words(post.created_at) %> ago.
+    </p>
+  </div>
+    <% if current_user == (post.user) %>
+      <div class="form-btn-ctrl">
+        <%= link_to "delete", post, method: :delete,
+                                         data: { confirm: "You sure?" }, class: "btn btn-lg btn-danger" %>
+      </div>
+    <% end %>
+</div>
